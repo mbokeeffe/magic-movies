@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import ReactTable from "react-table";
 import Header from './header/Header.js';
 import "react-table/react-table.css";
-import { formatGenres, formattedMovieData, getGenreOptions } from './utils.js'
+import { formatGenres, formatedMovieData, getGenreOptions } from './utils.js'
 import PropTypes from 'prop-types';
 
 
@@ -63,7 +63,7 @@ class MovieMagic extends Component {
         genreMaps[genre.id] = genre.name;
       });
       // Set data for rendering in grid
-      const data = formattedMovieData(movies, genreMaps);
+      const data = formatedMovieData(movies);
       this.setState({
         columns: [...this.state.columns,
           {
